@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu - O-Bailia Restaurant</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for footer icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- header start -->
+<!-- header start -->
 <header>
   <div class="headdiv">
     <!-- Logo -->
     <div class="logdiv">
       <a href="index.html">
-        <img src="/Logo.jpg" alt="O-Bailia Logo" id="logoimg">
+        <img src="Logo.jpg" alt="O-Bailia Logo" id="logoimg">
       </a>
     </div>
 
@@ -32,77 +34,58 @@
     <div class="orderdiv">
       <a href="#" id="orderbtn">
         Order Online Now
-        <img id="orderlogo" src="/orderlogo.PNG" alt="Order Logo">
+        <img id="orderlogo" src="orderlogo.PNG" alt="Order Logo">
       </a>
     </div>
   </div>
 </header>
-    <!-- header end -->
+<!-- header end -->
 
+<main>
 
+  <!-- Menu Images Section -->
+  <div class="menuimg">
+    <table>
+      <tr>
+        <td><img class="mimage" src="menu0.jpg" alt="Menu Image 0"></td>
+        <td><img class="mimage" src="menu1.jpg" alt="Menu Image 1"></td>
+      </tr>
+      <tr>
+        <td><img class="mimage" src="menu2.jpg" alt="Menu Image 2"></td>
+        <td><img class="mimage" src="menu3.jpg" alt="Menu Image 3"></td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- Menu Deals Section -->
+  <div class="menudeals">
+    <table>
+      <tr>
+        <td><img class="dealimg" src="img1.jpg" alt="Deal 1"></td>
+        <td><img class="dealimg" src="img2.jpg" alt="Deal 2"></td>
+        <td><img class="dealimg" src="img3.jpg" alt="Deal 3"></td>
+      </tr>
+      <tr>
+        <td><img class="dealimg" src="img4.jpg" alt="Deal 4"></td>
+        <td><img class="dealimg" src="img5.jpg" alt="Deal 5"></td>
+        <td><img class="dealimg" src="img2.jpg" alt="Deal 2 repeat"></td>
+      </tr>
+      <tr>
+        <td><img class="dealimg" src="img1.jpg" alt="Deal 1 repeat"></td>
+        <td><img class="dealimg" src="img2.jpg" alt="Deal 2 repeat"></td>
+        <td><img class="dealimg" src="img3.jpg" alt="Deal 3 repeat"></td>
+      </tr>
+    </table>
+  </div>
 
-            <main>
-
-
-                <div class="menuimg" >
-
-                    <table>
-
-                        <tr>
-                            <td><img class="mimage" src="menu0.jpg" alt=""></td>
-                            <td><img class="mimage" src="menu1.jpg" alt=""></td>
-                        </tr>
-                        <tr>
-                            <td><img class="mimage" src="menu2.jpg" alt=""></td>
-                            <td><img class="mimage" src="menu3.jpg" alt=""></td>
-                        </tr>
-    
-                    </table>
-
-
-
-            </div>
-            
-            <div class="menudeals">
-
-                <table>
-
-                    <tr>
-                        <td><img class="dealimg" src="/img1.jpg" alt=""></td>
-                        <td><img class="dealimg" src="/img2.jpg" alt=""></td>
-                        <td><img class="dealimg" src="/img3.jpg" alt=""></td>
-                    </tr>
-
-                    <tr>
-                        <td><img class="dealimg" src="/img4.jpg" alt=""></td>
-                        <td><img class="dealimg" src="/img5.jpg" alt=""></td>
-                        <td><img class="dealimg" src="/img2.jpg" alt=""></td>
-                    </tr>
-
-
-                    <tr>
-                        <td><img class="dealimg" src="/img1.jpg" alt=""></td>
-                        <td><img class="dealimg" src="/img2.jpg" alt=""></td>
-                        <td><img class="dealimg" src="/img3.jpg" alt=""></td>
-                    </tr>
-
-                </table>
-
-
-
-            </div>
-
-
-
-            </main>
-
+</main>
 
 <!-- ===== Footer ===== -->
 <footer>
   <div class="footer-container">
     <!-- Logo -->
     <div class="footer-logo">
-      <img src="/Logo.jpg" alt="O-Bailia Logo" class="footer-logo-img">
+      <img src="Logo.jpg" alt="O-Bailia Logo" class="footer-logo-img">
     </div>
 
     <!-- Navigation -->
@@ -129,37 +112,35 @@
 
   <!-- Divider -->
   <hr class="footer-line">
-<div class="footcontainer">
-  <!-- Left: Subscribe -->
-  <div class="leftfoot">
-    <p><b>Subscribe to News & Specials</b></p>
-    <div class="adiv">
-      <input type="email" id="footemail" placeholder="Enter your email">
-      <button id="footsubscribe">Subscribe</button>
+  <div class="footcontainer">
+    <!-- Left: Subscribe -->
+    <div class="leftfoot">
+      <p><b>Subscribe to News & Specials</b></p>
+      <div class="adiv">
+        <input type="email" id="footemail" placeholder="Enter your email">
+        <button id="footsubscribe">Subscribe</button>
+      </div>
+      <p id="formpara2">
+        This form is protected by reCAPTCHA and the Google 
+        <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+      </p>
     </div>
-    <p id="formpara2">
-      This form is protected by reCAPTCHA and the Google 
-      <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
-    </p>
-  </div>
 
-  <!-- Right: Support Info -->
-  <div class="rightfoot">
-    <p><b>Online ordering support:</b></p>
-    <a href="mailto:bilalzafar7350@gmail.com">bilalzafar7350@gmail.com</a>
-    <a href="#">Terms & Conditions</a>
-    <p class="copytxt">
-      © 2025 O-Bailia Restaurant<br>
-      All rights reserved.
-    </p>
+    <!-- Right: Support Info -->
+    <div class="rightfoot">
+      <p><b>Online ordering support:</b></p>
+      <a href="mailto:bilalzafar7350@gmail.com">bilalzafar7350@gmail.com</a>
+      <a href="#">Terms & Conditions</a>
+      <p class="copytxt">
+        © 2025 O-Bailia Restaurant<br>
+        All rights reserved.
+      </p>
+    </div>
   </div>
-</div>
-  </footer>
-  <!-- ===== End Footer ===== -->
+</footer>
+<!-- ===== End Footer ===== -->
 
 <script src="java1.js" defer></script>
 
-
-    
 </body>
 </html>
