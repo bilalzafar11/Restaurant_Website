@@ -763,7 +763,7 @@ footer {
 
 .footer-social a:hover {
   transform: translateY(-2px) scale(1.1); /* subtle lift + zoom */
-  color: #111;
+  color: #1f7ac5;
   opacity: 0.85;
 }
 
@@ -1215,6 +1215,7 @@ main {
     border-spacing: 8px;
   }
 }
+
 
 
 
