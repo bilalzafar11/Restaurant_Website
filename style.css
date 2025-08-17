@@ -702,7 +702,7 @@ footer {
 /* Logo */
 .footer-logo-img {
   max-width: 120px;
-  border-radius: 6px;
+  border-radius: 70px;
   object-fit: contain;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1215,5 +1215,6 @@ main {
     border-spacing: 8px;
   }
 }
+
 
 
