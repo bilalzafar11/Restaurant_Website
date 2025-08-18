@@ -50,3 +50,31 @@ images.forEach(img => {
     img.style.transform = 'scale(1)';
   });
 });
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navmenu");
+
+// Toggle menu on click
+function toggleMenu() {
+  navMenu.classList.toggle("active");
+  hamburger.classList.toggle("open");
+}
+
+// Click on hamburger
+hamburger.addEventListener("click", toggleMenu);
+
+// Keyboard support (Enter/Space)
+hamburger.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    toggleMenu();
+  }
+});
+
+// Close menu if clicked outside
+document.addEventListener("click", (e) => {
+  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+    navMenu.classList.remove("active");
+    hamburger.classList.remove("open");
+  }
+});
