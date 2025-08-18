@@ -23,32 +23,48 @@ body {
 }
 
 /* ========== Header ========== */
+/* ========== Global Reset & Base Styles ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* ========== Header ========== */
+/* ===== Header Wrapper ===== */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: #fff;
-  color: #000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
 }
 
 .headdiv {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  height: 90px;
   padding: 0 2rem;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
 }
 
+/* ===== Logo ===== */
 #logoimg {
   max-height: 70px;
   width: auto;
-  border-radius: 70%;
+  border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
@@ -56,19 +72,20 @@ header {
   transform: scale(1.05);
 }
 
+/* ===== Navigation (Desktop) ===== */
 .btndiv {
   display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .headerbtn {
   position: relative;
   text-decoration: none;
-  color: #000;
+  color: #111;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1rem;
   padding: 5px 8px;
   transition: color 0.3s ease;
 }
@@ -84,34 +101,35 @@ header {
   transition: width 0.3s ease;
 }
 
-.headerbtn:hover {
+.headerbtn:hover,
+.headerbtn.active {
   color: red;
 }
 
-.headerbtn:hover::after {
+.headerbtn:hover::after,
+.headerbtn.active::after {
   width: 100%;
 }
 
-/* ===== Order Buttons ===== */
-#orderbtn, #orderbtn1 {
+/* ===== Order Button ===== */
+#orderbtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Space between text & icon */
-  padding: 14px 28px;
+  gap: 10px;
+  padding: 12px 28px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
   border-radius: 35px;
-  border: 2px solid #b33e3e; /* Primary red */
+  border: 2px solid #b32c2c;
   color: #b32c2c;
   background: transparent;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
-#orderbtn:hover, #orderbtn1:hover {
-  background: #b32c2c; /* Fill red on hover */
+#orderbtn:hover {
+  background: #b32c2c;
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(179,44,44,0.25);
@@ -123,31 +141,109 @@ header {
   object-fit: contain;
 }
 
-/* ===== Responsive ===== */
+/* ===== Hamburger (Hidden by Default) ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger div {
+  width: 28px;
+  height: 3px;
+  background-color: #111;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ===== Mobile Navigation (Drawer) ===== */
 @media (max-width: 768px) {
-  #orderbtn, #orderbtn1 {
+  .btndiv {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 270px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start; /* buttons left aligned */
+    padding: 100px 30px 30px; /* leave space from top (logo gap) */
+    gap: 25px;
+    transition: right 0.4s ease;
+    box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .btndiv.active {
+    right: 0;
+  }
+
+  /* Hamburger Visible */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Order Button inside nav */
+  #orderbtn {
     width: 100%;
     justify-content: center;
     padding: 12px 0;
-    font-size: 0.95rem;
   }
 
-  #orderlogo {
-    width: 18px;
-    height: 18px;
+  /* Compact header spacing */
+  .headdiv {
+    justify-content: space-between;
+    padding: 0 1.2rem;
+    height: 75px;
   }
 }
 
+/* ===== Tablet Adjustments ===== */
+@media (max-width: 1024px) {
+  .btndiv {
+    gap: 20px;
+  }
+}
+
+/* ===== Small Mobile (Extra Compact) ===== */
 @media (max-width: 480px) {
-  #orderbtn, #orderbtn1 {
+  #orderbtn {
+    padding: 10px 20px;
     font-size: 0.9rem;
-    padding: 10px 0;
   }
 
-  #orderlogo {
-    width: 16px;
-    height: 16px;
+  #logoimg {
+    max-height: 55px;
   }
+
+  .btndiv {
+    width: 230px;
+    padding: 90px 20px 20px;
+    gap: 20px;
+  }
+
+  .headdiv {
+    padding: 0 1rem;
+  }
+
+  .hamburger div {
+    width: 24px;
+    height: 2.5px;
+  }
+}
+
+/* ===== Hamburger Animation (X Shape) ===== */
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
 }
 
 /* ========== Main Hero Section ========== */
