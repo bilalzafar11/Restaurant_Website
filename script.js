@@ -51,19 +51,34 @@ images.forEach(img => {
   });
 });
 
+// ======= Mobile Navigation (Hamburger Menu) ======= //
+
+// Cache DOM elements
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navmenu");
 
-// Toggle menu on click
+// Function to toggle menu
 function toggleMenu() {
-  navMenu.classList.toggle("active");
+  const isOpen = navMenu.classList.toggle("active");
   hamburger.classList.toggle("open");
+
+  // Accessibility update
+  hamburger.setAttribute("aria-expanded", isOpen);
 }
 
-// Click on hamburger
+// Function to close menu
+function closeMenu() {
+  navMenu.classList.remove("active");
+  hamburger.classList.remove("open");
+  hamburger.setAttribute("aria-expanded", "false");
+}
+
+// === Event Listeners === //
+
+// Toggle menu on hamburger click
 hamburger.addEventListener("click", toggleMenu);
 
-// Keyboard support (Enter/Space)
+// Keyboard support (Enter & Space)
 hamburger.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
@@ -71,10 +86,18 @@ hamburger.addEventListener("keydown", (e) => {
   }
 });
 
-// Close menu if clicked outside
+// Close menu when clicking outside
 document.addEventListener("click", (e) => {
   if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-    navMenu.classList.remove("active");
-    hamburger.classList.remove("open");
+    closeMenu();
   }
 });
+
+// Close menu when pressing ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeMenu();
+  }
+});
+
+// ======= End Mobile Navigation ======= //
