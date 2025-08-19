@@ -41,6 +41,7 @@ body {
 }
 
 /* ========== Header ========== */
+/* ===== Header Wrapper ===== */
 header {
   position: sticky;
   top: 0;
@@ -52,12 +53,13 @@ header {
 .headdiv {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;  
-  height: 75px;       
+  padding: 0 1.5rem;  /* thoda kam padding */
+  height: 75px;       /* height choti kar di */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 
 /* ===== Logo ===== */
 #logoimg {
@@ -148,6 +150,7 @@ header {
   gap: 5px;
   cursor: pointer;
   z-index: 1001;
+  margin-right: 8px;
 }
 
 .hamburger div {
@@ -164,13 +167,13 @@ header {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 270px;
+    width: 240px; /* thoda chhota drawer */
     height: 100vh;
     background: #fff;
     flex-direction: column;
-    align-items: flex-start; /* buttons left aligned */
-    padding: 100px 30px 30px; /* leave space from top (logo gap) */
-    gap: 25px;
+    align-items: flex-start;
+    padding: 80px 25px 25px; /* kam gap top se */
+    gap: 22px;
     transition: right 0.4s ease;
     box-shadow: -2px 0 20px rgba(0,0,0,0.1);
     z-index: 999;
@@ -180,25 +183,31 @@ header {
     right: 0;
   }
 
-  /* Hamburger Visible */
- .hamburger {
+  /* Hamburger Right Aligned */
+  .hamburger {
     display: flex;
-    justify-content: flex-end; /* Right side me bhej diya */
-    margin-left: auto;         /* Push to right */
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  /* Compact header spacing */
+  .headdiv {
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 50px; /* 75px → 60px */
+  }
+
+  /* Compact hamburger size */
+  .hamburger div {
+    width: 26px;
+    height: 3px;
   }
 
   /* Order Button inside nav */
   #orderbtn {
     width: 100%;
     justify-content: center;
-    padding: 12px 0;
-  }
-
-  /* Compact header spacing */
-  .headdiv {
-    justify-content: space-between;
-    padding: 0 1.2rem;
-    height: 75px;
+    padding: 10px 0;
   }
 }
 
@@ -212,26 +221,27 @@ header {
 /* ===== Small Mobile (Extra Compact) ===== */
 @media (max-width: 480px) {
   #orderbtn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 8px 16px;
+    font-size: 0.85rem;
   }
 
   #logoimg {
-    max-height: 55px;
+    max-height: 45px; /* aur chhota logo */
   }
 
   .btndiv {
-    width: 230px;
-    padding: 90px 20px 20px;
-    gap: 20px;
+    width: 210px;
+    padding: 70px 20px 20px;
+    gap: 18px;
   }
 
   .headdiv {
-    padding: 0 1rem;
+    padding: 0 0.8rem;
+    height: 35px; /* aur slim header */
   }
 
   .hamburger div {
-    width: 24px;
+    width: 22px;
     height: 2.5px;
   }
 }
@@ -246,7 +256,6 @@ header {
 .hamburger.open div:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -6px);
 }
-
 /* ===== Hero Section ===== */
 .mainimage {
   position: relative;
@@ -1597,6 +1606,7 @@ main {
     border-spacing: 8px;
   }
 }
+
 
 
 
