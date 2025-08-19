@@ -182,8 +182,10 @@ header {
   }
 
   /* Hamburger Visible */
-  .hamburger {
+ .hamburger {
     display: flex;
+    justify-content: flex-end; /* Right side me bhej diya */
+    margin-left: auto;         /* Push to right */
   }
 
   /* Order Button inside nav */
@@ -1596,4 +1598,5 @@ main {
     border-spacing: 8px;
   }
 }
+
 
