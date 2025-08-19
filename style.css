@@ -237,7 +237,7 @@ header {
 
   .headdiv {
     padding: 0 0.8rem;
-    height: 35px; /* aur slim header */
+    height: 30px; /* aur slim header */
   }
 
   .hamburger div {
@@ -1606,6 +1606,7 @@ main {
     border-spacing: 8px;
   }
 }
+
 
 
 
