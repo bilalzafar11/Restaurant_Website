@@ -41,7 +41,6 @@ body {
 }
 
 /* ========== Header ========== */
-/* ===== Header Wrapper ===== */
 header {
   position: sticky;
   top: 0;
@@ -53,8 +52,8 @@ header {
 .headdiv {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-  height: 90px;
+  padding: 0 1.5rem;  
+  height: 75px;       
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1598,5 +1597,6 @@ main {
     border-spacing: 8px;
   }
 }
+
 
 
